@@ -24,6 +24,13 @@ createForm:
 	created: "The new role was successfully created."
 	duplicateEntry: "Role with this name is already exists."
 
+privileges:
+	resource: "Resource"
+	privilege: "Privilege"
+	title: "Privileges"
+	submit: "Update privileges"
+	updated: "Privileges was successfully updated."
+
 rolesTable:
 	title: "Roles"
 	name: "Name"

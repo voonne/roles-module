@@ -24,6 +24,13 @@ createForm:
 	created: "Role byla úspěšně vytvořena."
 	duplicateEntry: "Role s tímto názvem již existuje."
 
+privileges:
+	resource: "Zdroj"
+	privilege: "Oprávnění"
+	title: "Oprávnění"
+	submit: "Upravit oprávnění"
+	updated: "Oprávnění byly úspěšně upraveny."
+
 rolesTable:
 	title: "Role"
 	name: "Název"

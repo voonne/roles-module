@@ -1,0 +1,29 @@
+<table class="table privileges">
+	<thead>
+	<tr>
+		<th width="25%">{('voonne-rolesModule.privileges.resource'|translate)}</th>
+		<th width="75%">{('voonne-rolesModule.privileges.privilege'|translate)}</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr n:foreach="$resources as $resource">
+		<th>{$resource->getDescription()|translate}</th>
+		<td>
+			{foreach $resource->getPrivileges() as $privilege}
+				{$form['privilegesPanel']['privileges']->getControlPart($privilege->getId())->__toString()|noescape}
+				{$form['privilegesPanel']['privileges']->getLabelPart($privilege->getId())->__toString()|noescape}
+			{/foreach}
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<div class="panel-footer">
+	{input privilegesPanel-submit, class => 'btn btn-primary pull-right'}
+</div>
+
+<style>
+	.privileges label {
+		margin: 0 1rem 0 .1rem;
+	}
+</style>
