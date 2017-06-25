@@ -1,0 +1,18 @@
+title: "Roles"
+
+default:
+	title: "All roles"
+
+create:
+	title: "Create role"
+
+update:
+	title: "Update role"
+	userNotFound: "The role was not found."
+
+permissions:
+	name: "Roles module"
+	create: "Create"
+	view: "View"
+	update: "Update"
+	remove: "Remove"

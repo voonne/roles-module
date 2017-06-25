@@ -1,0 +1,18 @@
+title: "Role"
+
+default:
+	title: "Přehled rolí"
+
+create:
+	title: "Vytvořit roli"
+
+update:
+	title: "Upravit roli"
+	userNotFound: "Požadovaná role nebyla nalezena."
+
+permissions:
+	name: "Modul role"
+	create: "Přidat"
+	view: "Zobrazit"
+	update: "Upravit"
+	remove: "Smazat"
