@@ -12,9 +12,11 @@ namespace Voonne\RolesModule\DI;
 
 use Kdyby\Translation\Translator;
 use Nette\DI\CompilerExtension;
+use Voonne\Layouts\Layout;
 use Voonne\RolesModule\Pages\CreatePage;
 use Voonne\RolesModule\Pages\DefaultPage;
 use Voonne\RolesModule\Pages\UpdatePage;
+use Voonne\RolesModule\Panels\RolesTablePanel;
 use Voonne\Voonne\InvalidStateException;
 
 
@@ -39,13 +41,17 @@ class RolesExtension extends CompilerExtension
 			->addSetup('addPage', ['roles', '@' . $this->prefix('updatePage')]);
 
 		$builder->addDefinition($this->prefix('defaultPage'))
-			->setClass(DefaultPage::class);
+			->setClass(DefaultPage::class)
+			->addSetup('addPanel', ['@' . $this->prefix('roleTable'), [Layout::POSITION_CENTER]]);
 
 		$builder->addDefinition($this->prefix('createPage'))
 			->setClass(CreatePage::class);
 
 		$builder->addDefinition($this->prefix('updatePage'))
 			->setClass(UpdatePage::class);
+
+		$builder->addDefinition($this->prefix('roleTable'))
+			->setClass(RolesTablePanel::class);
 	}
 
 

@@ -16,3 +16,11 @@ permissions:
 	view: "Zobrazit"
 	update: "Upravit"
 	remove: "Smazat"
+
+rolesTable:
+	title: "Role"
+	name: "Název"
+	update: "Upravit"
+	remove: "Smazat"
+	removed: "Role byla úspěšně smazána."
+	userNotFound: "Požadovaná role nebyla nalezena."

@@ -16,3 +16,11 @@ permissions:
 	view: "View"
 	update: "Update"
 	remove: "Remove"
+
+rolesTable:
+	title: "Roles"
+	name: "Name"
+	update: "Update"
+	remove: "Remove"
+	removed: "The role was successfully removed."
+	roleNotFound: "The role was not found."
