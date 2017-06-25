@@ -18,6 +18,7 @@ use Voonne\RolesModule\Pages\DefaultPage;
 use Voonne\RolesModule\Pages\UpdatePage;
 use Voonne\RolesModule\Panels\CreateFormPanel;
 use Voonne\RolesModule\Panels\RolesTablePanel;
+use Voonne\RolesModule\Panels\UpdateFormPanel;
 use Voonne\Voonne\InvalidStateException;
 
 
@@ -50,13 +51,17 @@ class RolesExtension extends CompilerExtension
 			->addSetup('addPanel', ['@' . $this->prefix('createForm'), [Layout::POSITION_CENTER]]);
 
 		$builder->addDefinition($this->prefix('updatePage'))
-			->setClass(UpdatePage::class);
+			->setClass(UpdatePage::class)
+			->addSetup('addPanel', ['@' . $this->prefix('updateForm'), [Layout::POSITION_CENTER]]);
 
 		$builder->addDefinition($this->prefix('createForm'))
 			->setClass(CreateFormPanel::class);
 
 		$builder->addDefinition($this->prefix('roleTable'))
 			->setClass(RolesTablePanel::class);
+
+		$builder->addDefinition($this->prefix('updateForm'))
+			->setClass(UpdateFormPanel::class);
 	}
 
 

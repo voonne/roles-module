@@ -31,3 +31,9 @@ rolesTable:
 	remove: "Smazat"
 	removed: "Role byla úspěšně smazána."
 	userNotFound: "Požadovaná role nebyla nalezena."
+
+updateForm:
+	title: "Role"
+	name: "Název"
+	submit: "Upravit roli"
+	updated: "Role byla úspěšně upravena."

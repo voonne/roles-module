@@ -31,3 +31,9 @@ rolesTable:
 	remove: "Remove"
 	removed: "The role was successfully removed."
 	roleNotFound: "The role was not found."
+
+updateForm:
+	title: "Role"
+	name: "Name"
+	submit: "Update role"
+	updated: "The role was successfully updated."
