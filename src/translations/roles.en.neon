@@ -17,6 +17,13 @@ permissions:
 	update: "Update"
 	remove: "Remove"
 
+createForm:
+	title: "Role"
+	name: "Name"
+	submit: "Create role"
+	created: "The new role was successfully created."
+	duplicateEntry: "Role with this name is already exists."
+
 rolesTable:
 	title: "Roles"
 	name: "Name"

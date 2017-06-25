@@ -17,6 +17,13 @@ permissions:
 	update: "Upravit"
 	remove: "Smazat"
 
+createForm:
+	title: "Role"
+	name: "Název"
+	submit: "Vytvořit roli"
+	created: "Role byla úspěšně vytvořena."
+	duplicateEntry: "Role s tímto názvem již existuje."
+
 rolesTable:
 	title: "Role"
 	name: "Název"
