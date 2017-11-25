@@ -10,9 +10,11 @@
 
 namespace Voonne\RolesModule\Panels;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Voonne\Messages\FlashMessage;
 use Voonne\Model\IOException;
+use Voonne\Panels\Panels\TablePanel\Adapters\Doctrine2Adapter;
 use Voonne\Panels\Panels\TablePanel\TablePanel;
 use Voonne\Voonne\Model\Entities\Role;
 use Voonne\Voonne\Model\Facades\RoleFacade;
@@ -32,13 +34,23 @@ class RolesTablePanel extends TablePanel
 	 */
 	private $roleFacade;
 
+	/**
+	 * @var EntityManagerInterface
+	 */
+	private $entityManager;
 
-	public function __construct(RoleRepository $roleRepository, RoleFacade $roleFacade)
+
+	public function __construct(
+		RoleRepository $roleRepository,
+		RoleFacade $roleFacade,
+		EntityManagerInterface $entityManager
+	)
 	{
 		parent::__construct();
 
 		$this->roleRepository = $roleRepository;
 		$this->roleFacade = $roleFacade;
+		$this->entityManager = $entityManager;
 
 		$this->setTitle('voonne-rolesModule.rolesTable.title');
 	}
@@ -65,10 +77,7 @@ class RolesTablePanel extends TablePanel
 			}
 		});
 
-		$this->onQueryCreate[] = function (QueryBuilder $queryBuilder) {
-			$queryBuilder->select('r')
-				->from(Role::class, 'r');
-		};
+		$this->setAdapter(new Doctrine2Adapter($this->entityManager->createQueryBuilder()->select('r')->from(Role::class, 'r')));
 	}
 
 
